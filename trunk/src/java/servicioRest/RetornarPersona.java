@@ -35,7 +35,7 @@ public class RetornarPersona {
         ConexionPostgres cs = new ConexionPostgres();
         JSONArray list = cs.retorna_persona(prf_cedula);
         String searchList = new Gson().toJson(list);
-        return searchList;
+        return list.toString();
      }
     
 }
