@@ -71,9 +71,6 @@ public class ConexionPostgres {
     
     public JSONArray retorna_persona(String prf_cedula) throws ClassNotFoundException, SQLException, Exception
           {
-        String consulta = "ok";
-         ArrayList<String> list = new ArrayList<String>();
-                 String data;   
         String driver = "org.postgresql.Driver";
         String connectString = "jdbc:postgresql://localhost:5432/inPerson";
         String user = "postgres";
