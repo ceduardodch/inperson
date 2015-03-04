@@ -34,10 +34,11 @@ public class IngresoPersona {
     @QueryParam("prf_sexo")String prf_sexo ,
     @QueryParam("prf_telefono_contacto")String prf_telefono_contacto,
     @QueryParam("prf_nombre_contacto")String prf_nombre_contacto, 
-    @QueryParam("prf_condicion_medica")String prf_condicion_medica)
+    @QueryParam("prf_condicion_medica")String prf_condicion_medica,
+            @QueryParam("prf_ciudad")String prf_ciudad)
     {
         ConexionPostgres cs = new ConexionPostgres();
-        return cs.ingreso_persona(prf_nombres, prf_apellidos, prf_cedula,prf_tipo_sangre,prf_alergias,prf_email,prf_fecha_nacimiento , prf_direccion, prf_telefono,prf_pais,prf_talla_camiseta,prf_sexo ,prf_telefono_contacto, prf_nombre_contacto, prf_condicion_medica);
+        return cs.ingreso_persona(prf_nombres, prf_apellidos, prf_cedula,prf_tipo_sangre,prf_alergias,prf_email,prf_fecha_nacimiento , prf_direccion, prf_telefono,prf_pais,prf_talla_camiseta,prf_sexo ,prf_telefono_contacto, prf_nombre_contacto, prf_condicion_medica, prf_ciudad);
         //return "OK ";
     }
 }

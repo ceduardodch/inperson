@@ -28,14 +28,15 @@ public class ConexionPostgres {
             String prf_email,String prf_fecha_nacimiento ,String prf_direccion,
             String prf_telefono,String prf_pais,String prf_talla_camiseta,
             String prf_sexo ,String prf_telefono_contacto,
-            String prf_nombre_contacto, String prf_condicion_medica)
+            String prf_nombre_contacto, String prf_condicion_medica,String prf_ciudad)
           {
         String consulta = "ok";
-        
+        String base ="inPerson";
         String driver = "org.postgresql.Driver";
-        String connectString = "jdbc:postgresql://localhost:5432/inPerson";
-        String user = "postgres";
-        String password = "cedccedc";
+        String connectString = "jdbc:postgresql://www.desafiovst.com:5432/"+base;
+            String user = "infinit-plus";
+            String password = "inf!nit*plus";
+      
 
         try{
             Class.forName(driver);
@@ -47,8 +48,7 @@ public class ConexionPostgres {
 "            '"+prf_cedula+"','"+prf_tipo_sangre+"','"+prf_alergias+"'," +
 "            '"+prf_email+"','" +prf_fecha_nacimiento+"','" +prf_direccion+"'," +
 "            '"+prf_telefono+"','"+prf_pais+"','"+prf_talla_camiseta+"'," +
-"            '"+prf_sexo+"','"+prf_telefono_contacto+"'," +
-"            '"+prf_nombre_contacto+"','" +prf_condicion_medica+"');"
+"            '"+prf_sexo+"','"+prf_telefono_contacto+"','"+prf_nombre_contacto+"','" +prf_condicion_medica+"','" +prf_ciudad+"');"
                                          );
 
             stmt.close();
@@ -71,10 +71,11 @@ public class ConexionPostgres {
     
     public JSONArray retorna_persona(String prf_cedula) throws ClassNotFoundException, SQLException, Exception
           {
+              String base ="inPerson";
         String driver = "org.postgresql.Driver";
-        String connectString = "jdbc:postgresql://localhost:5432/inPerson";
-        String user = "postgres";
-        String password = "cedccedc";
+         String connectString = "jdbc:postgresql://www.desafiovst.com:5432/"+base;
+            String user = "infinit-plus";
+            String password = "inf!nit*plus";
          Class.forName(driver);
          Connection con = DriverManager.getConnection(connectString, user , password);
          Statement stmt = con.createStatement();
