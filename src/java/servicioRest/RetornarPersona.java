@@ -33,8 +33,7 @@ public class RetornarPersona {
     public String RetornarPersona(@QueryParam("prf_cedula")String prf_cedula) throws ClassNotFoundException, SQLException, Exception
     {          
         ConexionPostgres cs = new ConexionPostgres();
-        JSONArray list = cs.retorna_persona(prf_cedula);
-        String searchList = new Gson().toJson(list);
+        JSONArray list = cs.retorna_persona(prf_cedula);        
         return list.toString();
      }
     
